@@ -15,7 +15,8 @@ public class Main {
         do{
             System.out.println("Type 1, if you want to search by ID" + "\n");
             System.out.println("Type 2, if you want to search by name" + "\n");
-            System.out.println("Type 3 to exit:" + "\n");
+            System.out.println("Type 3, if you want to add new students by name" + "\n"); // Additional chocie for adding students
+            System.out.println("Type 4 to exit:" + "\n");
             choice = reader.nextInt();
             reader.nextLine();
 
@@ -35,6 +36,14 @@ public class Main {
                 student.searchByName(studentName);
                     break;
                 case 3:
+                System.out.println("How many student entries do you want to make? " + "\n");
+                int studentEntries = reader.nextInt();
+                reader.nextLine();
+                Student studentsToAdd = new Student(studentEntries);
+                studentsToAdd.addStudents(studentEntries);
+                studentsToAdd.displayRecentAdditions(studentEntries);
+                    break;
+                case 4:
                     break;
                 default:
                     System.out.println("Invalid choice" + "\n");
