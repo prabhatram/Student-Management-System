@@ -40,12 +40,12 @@ public class Main {
                 int entries = reader.nextInt();
                 reader.nextLine();
                 Student[] students = new Student[entries];
-                for(int i=0; i<entries; i++){
+                for(int i=0; i<students.length; i++){
                     students[i] = new Student();
                     students[i].addStudents(i+1);
                 }
                 System.out.println("\n" + "Here are the new students you added" + "\n");
-                for(int i=0; i<entries; i++){
+                for(int i=0; i<students.length; i++){
                     students[i].displayStudents(i+1);
                 }
 
