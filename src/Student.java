@@ -48,14 +48,14 @@ public class Student {
 
     Scanner reader = new Scanner(System.in);
 
-    private String [] studentID; // 001, 002, 003, 005, 005
-    private String [] studentName;
-    private char [] studentGender;
-    private String [] studentAddress;
-    private String [] studentStatus;
+    private String studentID; // 001, 002, 003, 005, 005
+    private String studentName;
+    private char studentGender;
+    private String studentAddress;
+    private String studentStatus;
     
-    
-    public Student(int entries){
+    public Student(){}
+    /* public Student(int entries){
 
         studentID = new String[entries]; // null, null
         studentName = new String[entries];
@@ -63,45 +63,45 @@ public class Student {
         studentAddress = new String[entries];
         studentStatus = new String[entries];
 
-    }
-    public void setStudentID(String id, int index){
-        studentID[index] = id;
-    }
-
-    public void setStudentName(String name, int index){
-        studentName[index] = name;
+    } */
+    public void setStudentID(String id){
+        studentID = id;
     }
 
-    public void setStudentGender(char gender, int index){
-        studentGender[index] = gender;
+    public void setStudentName(String name){
+        studentName = name;
     }
 
-    public void setStudentAddress(String address, int index){
-        studentAddress[index] = address;
+    public void setStudentGender(char gender){
+        studentGender = gender;
     }
 
-    public void setStudentStatus(String status, int index){
-        studentStatus[index] = status;
+    public void setStudentAddress(String address){
+        studentAddress = address;
     }
 
-    public String getStudentID(int index){
-        return studentID[index];
+    public void setStudentStatus(String status){
+        studentStatus = status;
     }
 
-    public String getStudentName(int index){
-        return studentName[index];
+    public String getStudentID(){
+        return studentID;
     }
 
-    public char getStudentGender(int index){
-        return studentGender[index];
+    public String getStudentName(){
+        return studentName;
     }
 
-    public String getStudentAddress(int index){
-        return studentAddress[index];
+    public char getStudentGender(){
+        return studentGender;
     }
 
-    public String getStudentStatus(int index){
-        return studentStatus[index];
+    public String getStudentAddress(){
+        return studentAddress;
+    }
+
+    public String getStudentStatus(){
+        return studentStatus;
     }
 
     public Student(String teacherID, String teacherName){
@@ -148,40 +148,39 @@ public class Student {
         }    
     }
     
-    public void addStudents(int entries){
-        for(int i = 0; i <entries; i++){
-            
-            System.out.println("\n" + "Please enter the ID for Student #:" + (i + 1) + "\n");
-            String id = reader.nextLine();
-            setStudentID(id, i);
-            
-            System.out.println("Please enter the name for Student #:" + (i+1) + "\n");
-            String name = reader.nextLine();
-            setStudentName(name, i);
-            
-            System.out.println("Please enter the gender for Student #:" + (i+1) + "\n");
-            char gender = reader.nextLine().charAt(0);
-            setStudentGender(gender, i);
-            
-            System.out.println("Please enter the address for Student #:" + (i+1) + "\n");
-            String address = reader.nextLine();
-            setStudentAddress(address, i);
-            
-            System.out.println("Please enter the status for Student #:" + (i+1) + "\n");
-            String status = reader.nextLine();
-            setStudentStatus(status, i);
-            } 
+    public void addStudents(int entries, int i){
+       System.out.println("\n" + "Please enter the details for Student #:" + (i+1) + "\n");
         
-    }
+       System.out.println("\n" + "Please enter the ID for Student #:" + "\n");
+        String id = reader.nextLine();
+        setStudentID(id);
+            
+        System.out.println("Please enter the name for Student #:"  + "\n");
+        String name = reader.nextLine();
+        setStudentName(name);
+        
+        System.out.println("Please enter the gender for Student #:" + "\n");
+        char gender = reader.nextLine().charAt(0);
+        setStudentGender(gender);
+        
+        System.out.println("Please enter the address for Student #:" + "\n");
+        String address = reader.nextLine();
+        setStudentAddress(address);
+        
+        System.out.println("Please enter the status for Student #:" + "\n");
+        String status = reader.nextLine();
+        setStudentStatus(status);
+        } 
 
-    public void displayStudents(int entries){
-        for(int i = 0; i < entries; i++){
-            System.out.println("\n" +"ID:" + getStudentID(i) + "\n");
-            System.out.println("Name:" + getStudentName(i) + "\n");
-            System.out.println("Gender:" + getStudentGender(i) + "\n");
-            System.out.println("Address:" + getStudentAddress(i) + "\n");
-            System.out.println("Status:" + getStudentStatus(i) + "\n");
-        }
+
+    public void displayStudents(int i){
+        System.out.println("\n" + "Following are the details of Student #:" + (i+1) + "\n");
+            System.out.println("\n" +"ID:" + getStudentID() + "\n");
+            System.out.println("Name:" + getStudentName() + "\n");
+            System.out.println("Gender:" + getStudentGender() + "\n");
+            System.out.println("Address:" + getStudentAddress() + "\n");
+            System.out.println("Status:" + getStudentStatus() + "\n");
+        
     }
 
     public String toString(){

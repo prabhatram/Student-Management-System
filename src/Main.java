@@ -39,10 +39,18 @@ public class Main {
                 System.out.println("How many student details do you want to add?" + "\n");
                 int entries = reader.nextInt(); // How many student details do you want to add? 3 __
                 reader.nextLine();
-                Student students = new Student(entries);
-                students.addStudents(entries);
-                students.displayStudents(entries);
-                    break;
+                Student [] students = new Student[entries];
+                for(int i=0; i<entries; i++){ // i = 2
+                    students[i] = new Student(); // students [2] = new Student();
+                    students[i].addStudents(entries, i); //students[2].addStudents(3, 0)
+                }
+                for(int i=0; i<entries; i++){ // i = 2
+                    students[i].displayStudents(i); //
+                }
+
+
+                
+                
                 case 4:
                     break;
                 default:
@@ -51,7 +59,6 @@ public class Main {
         } while(choice != 3);
 
         reader.close();
-        
     }
     
 }
